@@ -1,0 +1,15 @@
+# Lazy.nvim 関連
+lazy-lock.json
+plugin/
+.cache/
+.log
+
+# 一時ファイル・履歴
+swap/
+undo/
+session/
+*.swp
+*.swo
+*.tmp
+.netrwhist
+
