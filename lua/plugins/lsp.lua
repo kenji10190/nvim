@@ -7,7 +7,14 @@ return {
   config = function()
     require("mason").setup()
     require("mason-lspconfig").setup({
-      ensure_installed = { "html", "cssls", "ts_ls", "eslint", "tailwindcss" }
+      ensure_installed = {
+        "html",
+        "cssls",
+        "ts_ls",
+        "eslint",
+        "tailwindcss",
+        "rust_analyzer"
+      }
     })
     
     local lspconfig = require("lspconfig")
@@ -27,6 +34,15 @@ return {
         "typescriptreact",
         "ejs"
       }
+    }
+    lspconfig.rust_analyzer.setup{
+      setting = {
+        ["rust-analyzer"] = {
+          cargo = {
+            allFeatures = true,
+          },
+        },
+      },
     }
   end
 }
